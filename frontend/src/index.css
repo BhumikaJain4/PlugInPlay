@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-cream text-charcoal font-sans;
+  }
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cfc5b8 #fbf5ea;
+  }
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: #fbf5ea; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: #cfc5b8; border-radius: 3px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover { background: #6a0f21; }
+}
+
+/* Hide externally injected floating helper widgets inside this app view. */
+body > iframe[style*="position: fixed"][style*="bottom"][style*="right"],
+body > div[style*="position: fixed"][style*="bottom"][style*="right"],
+body > aside[style*="position: fixed"][style*="bottom"][style*="right"],
+iframe[src*="copilot" i],
+iframe[src*="assistant" i],
+iframe[title*="assistant" i],
+iframe[title*="copilot" i],
+div[id*="copilot" i],
+div[class*="copilot" i],
+div[id*="assistant" i],
+div[class*="assistant" i] {
+  display: none !important;
+  visibility: hidden !important;
+}
