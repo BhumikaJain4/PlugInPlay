@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from typing import Optional
 from models.team import TeamMember
+from models.task import Task
 from models.user import User
 from core.security import get_current_user
 
@@ -64,9 +65,16 @@ async def update_member(
     return member_to_dict(member)
 
 
-@router.delete("/{member_id}", status_code=204)
+@router.delete("/{member_id}", status_code=200)
 async def delete_member(member_id: str, current_user: User = Depends(get_current_user)):
     member = await TeamMember.get(member_id)
     if not member:
         raise HTTPException(status_code=404, detail="Member not found")
+    
+    member_name = member.name
+    
+    # Unassign all tasks assigned to this member
+    await Task.find(Task.assigned_to == member_name).update({"$set": {"assigned_to": ""}})
+    
     await member.delete()
+    return {"message": f"Member '{member_name}' deleted. Tasks reassigned."}

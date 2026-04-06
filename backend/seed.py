@@ -33,40 +33,7 @@ def shifted_task_dates(task: dict, days: int = SHIFT_TASKS_BY_DAYS) -> dict:
 
 
 TASKS = [
-    {"title": "Review Instagram Post for SM Information Session", "detail": "<ul><li>Go through Instagram post designed for SM orientation 2025</li><li>Suggest necessary changes and discuss with KB</li><li>Finalise the Instagram Post for Orientation 2026</li></ul>",
-        "assigned_to": "Jahnvi Nagdev", "due_date": "19 March", "due_day": 19, "module": "SM Orientation", "links": [{"title": "Canva Post 2025", "url": "https://www.canva.com/design/DAGi_QwZ6cQ/Dpsa59KZ5GZMN7mWz_4mnQ/edit", "type": "canva"}]},
-    {"title": "Review Instagram Post for SM Application", "detail": "<ul><li>Go through Instagram post designed for SM Application 2025</li><li>Suggest necessary changes and discuss with KB</li><li>Finalise the Instagram Post for Application 2026</li></ul>",
-        "assigned_to": "Jahnvi Nagdev", "due_date": "19 March", "due_day": 19, "module": "SM Orientation", "links": [{"title": "Canva Post 2025", "url": "https://www.canva.com/design/DAGkVMqmTbA/21lmjWzaNpQpC6YwYlFO3w/edit", "type": "canva"}]},
-    {"title": "Send Instagram Post to Comm for Approval", "detail": "<ul><li>Prepare final Instagram posts for review</li><li>Send to Communications team for approval</li><li>Address any feedback received</li></ul>",
-        "assigned_to": "Jahnvi Nagdev", "due_date": "19 March", "due_day": 19, "module": "SM Orientation", "links": []},
-    {"title": "MPH Booking", "detail": "<ul><li>Book MPH (Multi-Purpose Hall) for April 1 Information Session</li><li>Ensure availability for entire duration</li><li>Confirm booking and save confirmation</li></ul>",
-     "assigned_to": "Sanskriti Patidar", "due_date": "19 March", "due_day": 19, "module": "Infrastructure", "links": []},
-    {"title": "SM Application Form Review", "detail": "<ul><li>Review last year's Mitr application Google Form with KB</li><li>Identify necessary changes for 2026</li><li>Update form fields and questions</li></ul>", "assigned_to": "Sanskriti Patidar",
-        "due_date": "19 March", "due_day": 19, "module": "SM Orientation", "links": [{"title": "Application Form 2025", "url": "https://docs.google.com/forms/d/e/1FAIpQLSfn0ccucd1O07qbHLvQVEvLuO6KqpLF0mnEMMsbLEUv71QzCQ/viewform?usp=sharing", "type": "form"}]},
-    {"title": "Review PPT for SM Information Session", "detail": "<ul><li>Go through SM Orientation 2025 PPT</li><li>Identify changes and modifications required</li><li>Discuss with KB and make changes</li><li>Finalise PPT for Orientation 2026</li></ul>",
-        "assigned_to": "Annanya Deshmukh (SEDC), Jahnvi Nagdev", "due_date": "20 March", "due_day": 20, "module": "SM Orientation", "links": [{"title": "Orientation PPT 2025", "url": "https://www.canva.com/design/DAGjk--VR0o/H8WuXeVfTAAQ71iU49hXWA/edit", "type": "ppt"}]},
-    {"title": "SM Information Session EOI Form Review", "detail": "<ul><li>Review Orientation EOI form with KB</li><li>Make any changes required for 2026</li><li>Test form functionality</li></ul>",
-        "assigned_to": "Sanskriti Patidar", "due_date": "20 March", "due_day": 20, "module": "SM Orientation", "links": [{"title": "EOI Form 2025", "url": "https://forms.gle/dH3521KmBBddhXpf7", "type": "form"}]},
-    {"title": "Draft Mail — Call for Interview", "detail": "<ul><li>Draft email for applicants selected for the interview round</li><li>Get approval from KB</li><li>Paste final draft in Communication 2026 Doc</li></ul>", "assigned_to": "Rushal Panchal (SEDC)", "due_date": "20 March", "due_day": 20, "module": "Communications", "links": [
-        {"title": "Reference Doc 2025", "url": "https://docs.google.com/document/d/1kD0Gqfu9x5v4tCkeXn20tPyAfqy5WcH4pTgC17aRcL0/edit", "type": "doc"}, {"title": "Communication Doc 2026", "url": "https://docs.google.com/document/d/1WtTdOorPfLiNOa6cThiPerDRKkVW3s_t3Oa6NUnv6gQ/edit?usp=sharing", "type": "doc"}]},
-    {"title": "Draft Mail — Mitr Selection", "detail": "<ul><li>Draft email for applicants selected as Student Mitrs for 2026-27</li><li>Get approval from KB</li><li>Paste final draft in Communication 2026 Doc</li></ul>", "assigned_to": "Rushal Panchal (SEDC)", "due_date": "20 March", "due_day": 20, "module": "Communications", "links": [
-        {"title": "Reference Doc 2025", "url": "https://docs.google.com/document/d/1kD0Gqfu9x5v4tCkeXn20tPyAfqy5WcH4pTgC17aRcL0/edit", "type": "doc"}, {"title": "Communication Doc 2026", "url": "https://docs.google.com/document/d/1WtTdOorPfLiNOa6cThiPerDRKkVW3s_t3Oa6NUnv6gQ/edit?usp=sharing", "type": "doc"}]},
-    {"title": "Review Email for SM Orientation", "detail": "<ul><li>Read through the email sent for SM Orientation 2025</li><li>Identify required changes, discuss with KB</li><li>Make the necessary changes</li><li>Paste final draft in Communication 2026 Doc</li></ul>",
-        "assigned_to": "Rushal Panchal (SEDC)", "due_date": "20 March", "due_day": 20, "module": "Communications", "links": [{"title": "Newsletter 2025", "url": "https://www.canva.com/design/DAGjBdeLeaA/oq6GNKb1lbr3KHKe1bATwQ/edit", "type": "email"}, {"title": "Communication Doc 2026", "url": "https://docs.google.com/document/d/1WtTdOorPfLiNOa6cThiPerDRKkVW3s_t3Oa6NUnv6gQ/edit?usp=sharing", "type": "doc"}]},
-    {"title": "Send Information Session Invite", "detail": "<ul><li>Share the final Orientation Invitation email to AK</li><li>Send before 12pm deadline</li><li>Confirm receipt</li></ul>",
-        "assigned_to": "Rushal Panchal (SEDC)", "due_date": "21 March", "due_day": 21, "module": "Communications", "links": []},
-    {"title": "Review Email for SM Application", "detail": "<ul><li>Read through the email sent for SM Application 2025</li><li>Identify required changes, discuss with KB</li><li>Paste final draft in Communication 2026 Doc</li></ul>", "assigned_to": "Rushal Panchal (SEDC)", "due_date": "23 March", "due_day": 23, "module": "Communications", "links": [
-        {"title": "Email Reference 2025", "url": "https://docs.google.com/document/d/1kD0Gqfu9x5v4tCkeXn20tPyAfqy5WcH4pTgC17aRcL0/edit", "type": "doc"}, {"title": "Communication Doc 2026", "url": "https://docs.google.com/document/d/1WtTdOorPfLiNOa6cThiPerDRKkVW3s_t3Oa6NUnv6gQ/edit?usp=sharing", "type": "doc"}]},
-    {"title": "Create Assessment Infrastructure", "detail": "<ul><li>Review the existing five-dimension Competency Rubric with KB</li><li>Finalise the Assessment Rubric for SM Induction 2026</li><li>Document scoring criteria</li></ul>", "assigned_to": "Sanskriti Patidar",
-        "due_date": "23 March", "due_day": 23, "module": "Infrastructure", "links": [{"title": "Rubric / Reference 2025", "url": "https://docs.google.com/document/d/1kD0Gqfu9x5v4tCkeXn20tPyAfqy5WcH4pTgC17aRcL0/edit?usp=sharing", "type": "doc"}]},
-    {"title": "Post Information Session Invite Post", "detail": "<ul><li>Post invitation on official social media channels</li><li>Schedule posts for optimal engagement</li><li>Monitor responses</li></ul>",
-        "assigned_to": "Jahnvi Nagdev", "due_date": "23 March", "due_day": 23, "module": "SM Orientation", "links": []},
-    {"title": "SM Information Session Planning Meeting", "detail": "<ul><li>Go through the Orientation 2025 flow</li><li>Discuss and design the plan for Orientation 2026</li><li>Add the final plan under the tab SM Orientation Plan 2026</li></ul>",
-        "assigned_to": "Sanskriti Patidar, Rushal Panchal (SEDC)", "due_date": "25 March", "due_day": 25, "module": "SM Orientation", "links": [{"title": "Orientation Plan Doc", "url": "https://docs.google.com/document/d/1e6731tY01Ey6lAh6wNdcPQXO8fC0QAiRIUdajruH1JE/edit?usp=sharing", "type": "doc"}]},
-    {"title": "Information Session Readiness Meeting", "detail": "<ul><li>Go through the final orientation plan with KB</li><li>Prepare anything remaining before April 1 session</li></ul>",
-        "assigned_to": "Sanskriti, Annanya Deshmukh, Jahnvi Nagdev, Rushal Panchal, Vinchy Makwana, Fenil Shah", "due_date": "31 March", "due_day": 31, "module": "SM Orientation", "links": []},
-    {"title": "Student Mitr Information Session", "detail": "<ul><li>Conduct the Student Mitr Information Session</li><li>Follow finalised orientation plan</li></ul>",
-        "assigned_to": "Full Team", "due_date": "1 April", "due_day": 1, "due_month": 4, "module": "SM Orientation", "links": []},
+    # Keep only April 5-6 tasks. All others removed.
 ]
 
 TEAM = [
@@ -196,7 +163,15 @@ async def seed():
             await existing.save()
             print(f"✅ Evaluator repaired: {evaluator['email']} / {evaluator['password']} ({evaluator['role']})")
 
-    # Tasks
+    # Tasks - Delete all non-April 5-6 tasks first
+    await Task.get_motor_collection().delete_many({
+        "$or": [
+            {"due_day": {"$nin": [5, 6]}, "due_month": 4, "due_year": 2026},
+            {"due_month": {"$ne": 4}},
+            {"due_year": {"$ne": 2026}},
+        ]
+    })
+    
     inserted_tasks = 0
     updated_tasks = 0
     for t in SHIFTED_TASKS:
@@ -214,7 +189,7 @@ async def seed():
             inserted_tasks += 1
     print(
         f"✅ Tasks synced: {len(SHIFTED_TASKS)} total "
-        f"({inserted_tasks} inserted, {updated_tasks} shifted +{SHIFT_TASKS_BY_DAYS} days)"
+        f"({inserted_tasks} inserted, {updated_tasks} shifted +{SHIFT_TASKS_BY_DAYS} days) - ALL OTHER TASKS DELETED"
     )
 
     # Team

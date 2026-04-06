@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Modal, FormField, Input, Textarea, Select, Button } from './ui'
-import { useCreateTask, useUpdateTask } from '../hooks/useApi'
+import { useCreateTask, useUpdateTask, useTeam } from '../hooks/useApi'
 import { LINK_LABELS } from '../utils/helpers'
 
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
@@ -10,15 +10,11 @@ const DEFAULT_FORM = {
   module: 'SM Orientation', links: []
 }
 
-const TEAM_NAMES = [
-  'Jahnvi Nagdev','Sanskriti Patidar','Rushal Panchal (SEDC)',
-  'Annanya Deshmukh (SEDC)','Vinchy Makwana','Fenil Shah','Full Team'
-]
-
 export default function TaskModal({ open, onClose, editTask = null }) {
   const [form, setForm] = useState(DEFAULT_FORM)
   const createTask = useCreateTask()
   const updateTask = useUpdateTask()
+  const { data: teamData = [] } = useTeam()
 
   useEffect(() => {
     if (editTask) {
@@ -60,10 +56,11 @@ export default function TaskModal({ open, onClose, editTask = null }) {
     const detailHtml = '<ul>' + form.detail.split('\n').filter(l => l.trim())
       .map(l => `<li>${l.replace(/^[-•]\s*/, '')}</li>`).join('') + '</ul>'
 
+    const defaultAssignee = teamData.length > 0 ? teamData[0].name : 'Unassigned'
     const payload = {
       title: form.title,
       detail: detailHtml,
-      assigned_to: form.assigned_to || TEAM_NAMES[0],
+      assigned_to: form.assigned_to || defaultAssignee,
       module: form.module,
       links: form.links.filter(l => l.url),
       ...dateInfo,
@@ -96,7 +93,8 @@ export default function TaskModal({ open, onClose, editTask = null }) {
           </FormField>
           <FormField label="Assigned To">
             <Select value={form.assigned_to} onChange={e => set('assigned_to', e.target.value)}>
-              {TEAM_NAMES.map(n => <option key={n} value={n}>{n}</option>)}
+              <option value="">Select team member...</option>
+              {teamData.map(member => <option key={member.id} value={member.name}>{member.name}</option>)}
             </Select>
           </FormField>
         </div>

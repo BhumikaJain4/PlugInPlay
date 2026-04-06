@@ -88,18 +88,20 @@ export default function Sidebar({ className = '', onNavigate, showCloseButton = 
         ))}
       </nav>
 
-      {/* Mitr Recruitment */}
-      <nav className="px-4 xl:px-6 mb-4 xl:mb-5 shrink-0">
-        <p className="text-[0.64rem] xl:text-[0.7rem] uppercase tracking-[0.15em] opacity-60 mb-2 xl:mb-3 font-semibold">
-          <i className="fas fa-heart text-gold mr-1" />Mitr Recruitment
-        </p>
-        {NAV_MITR.map(({ to, icon, label }) => (
-          <NavLink key={to} to={to} className={navLinkClass} onClick={onNavigate}>
-            <i className={`fas ${icon} w-5 text-center text-gold`} />
-            <span>{label}</span>
-          </NavLink>
-        ))}
-      </nav>
+      {/* Mitr Recruitment — Admin Only */}
+      {user?.role === 'admin' && (
+        <nav className="px-4 xl:px-6 mb-4 xl:mb-5 shrink-0">
+          <p className="text-[0.64rem] xl:text-[0.7rem] uppercase tracking-[0.15em] opacity-60 mb-2 xl:mb-3 font-semibold">
+            <i className="fas fa-heart text-gold mr-1" />Mitr Recruitment
+          </p>
+          {NAV_MITR.map(({ to, icon, label }) => (
+            <NavLink key={to} to={to} className={navLinkClass} onClick={onNavigate}>
+              <i className={`fas ${icon} w-5 text-center text-gold`} />
+              <span>{label}</span>
+            </NavLink>
+          ))}
+        </nav>
+      )}
 
       {/* Modules Nav */}
       <nav className="px-4 xl:px-6 mb-4 xl:mb-5 shrink-0">

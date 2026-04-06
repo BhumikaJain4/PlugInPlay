@@ -61,10 +61,10 @@ export default function App() {
         <Route path="infra"       element={<InfraPage />} />
         <Route path="applications" element={<ApplicationsPage />} />
 
-        {/* Mitr Recruitment */}
-        <Route path="screening"   element={<ScreeningPage />} />
-        <Route path="interviews"  element={<InterviewPage />} />
-        <Route path="selection"   element={<SelectionDashboard />} />
+        {/* Mitr Recruitment — Admin Only */}
+        <Route path="screening"   element={<AdminRoute><ScreeningPage /></AdminRoute>} />
+        <Route path="interviews"  element={<AdminRoute><InterviewPage /></AdminRoute>} />
+        <Route path="selection"   element={<AdminRoute><SelectionDashboard /></AdminRoute>} />
       </Route>
 
       {/* Catch-all */}

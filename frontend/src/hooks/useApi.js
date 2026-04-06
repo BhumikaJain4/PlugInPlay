@@ -38,6 +38,14 @@ export function useDeleteTask() {
     onError: () => toast.error('Failed to delete task'),
   })
 }
+export function useDeleteAllTasks() {
+  const qc = useQueryClient()
+  return useMutation({
+    mutationFn: tasksApi.resetAll,
+    onSuccess: () => { qc.invalidateQueries({ queryKey: ['tasks'] }); toast.success('All tasks deleted') },
+    onError: () => toast.error('Failed to delete all tasks'),
+  })
+}
 
 // ── Team ──────────────────────────────────────────────────────────────────────
 export function useTeam() {

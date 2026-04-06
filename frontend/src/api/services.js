@@ -19,6 +19,7 @@ export const tasksApi = {
   update: (id, data) => api.patch(`/tasks/${id}`, data).then(r => r.data),
   delete: (id) => api.delete(`/tasks/${id}`),
   markComplete: (id) => api.patch(`/tasks/${id}`, { status: 'completed' }).then(r => r.data),
+  resetAll: () => api.delete('/tasks/reset-all').then(r => r.data),
 }
 
 // ── Team ──────────────────────────────────────────────────────────────────────

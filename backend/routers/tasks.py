@@ -186,3 +186,25 @@ async def delete_task(task_id: str, current_user: User = Depends(get_current_use
         entity_id=task_id,
         message=f"Deleted task '{title}'",
     )
+
+
+@router.delete("/reset-all", status_code=200)
+async def reset_all_tasks(current_user: User = Depends(get_current_user)):
+    """Delete all tasks except April 5-6"""
+    # Delete tasks NOT on April 5 or 6
+    result = await Task.get_motor_collection().delete_many({
+        "$or": [
+            {"due_day": {"$nin": [5, 6]}, "due_month": 4, "due_year": 2026},
+            {"due_month": {"$ne": 4}},
+            {"due_year": {"$ne": 2026}},
+        ]
+    })
+    await log_activity(
+        actor=current_user,
+        action="tasks_deleted",
+        entity_type="task",
+        entity_id="all",
+        message=f"Deleted most tasks, kept April 5-6 ({result.deleted_count} deleted)",
+        metadata={"count": result.deleted_count},
+    )
+    return {"deleted_count": result.deleted_count, "message": "Tasks deleted (kept April 5-6)"}
